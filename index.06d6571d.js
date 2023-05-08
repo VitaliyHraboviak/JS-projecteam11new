@@ -1,0 +1,2 @@
+!function(){var e=document.querySelector(".modal"),n=e.querySelector(".modal-content"),t=e.querySelector(".js-modal-close");function c(){e.style.display="none"}document.querySelector(".book-cover").addEventListener("click",(function(){e.style.display="block"})),t.addEventListener("click",c),n.addEventListener("click",(function(e){e.target===n&&c()})),document.addEventListener("keydown",(function(e){"Escape"===e.key&&c()}))}();
+//# sourceMappingURL=index.06d6571d.js.map

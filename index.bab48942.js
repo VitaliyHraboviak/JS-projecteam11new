@@ -1,0 +1,2 @@
+const e=document.querySelector(".modal"),t=e.querySelector(".modal-content"),c=e.querySelector(".js-modal-close");function n(){e.style.display="none"}document.querySelector(".book-cover").addEventListener("click",(function(){e.style.display="block"})),c.addEventListener("click",n),t.addEventListener("click",(e=>{e.target===t&&n()})),document.addEventListener("keydown",(e=>{"Escape"===e.key&&n()}));
+//# sourceMappingURL=index.bab48942.js.map
