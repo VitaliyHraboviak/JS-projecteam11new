@@ -1,0 +1,94 @@
+/* Book cover styles */
+.book-cover {
+  width: 100%;
+  max-width: 335px; /* mobile */
+  margin: 0 auto;
+}
+
+/* Modal styles */
+.modal {
+  //display: none;//
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(17, 17, 17, 0.4);
+}
+
+.modal-content {
+  background: #ffffff;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 100%;
+  max-width: 579px; /* mobile and tablet */
+  box-sizing: border-box;
+  border: 2px solid #111111;
+  border-radius: 18px;
+  position: relative;
+}
+
+.js-modal-close {
+  width: 20px;
+  height: 20px;
+  //   background-color: #ffffff;//
+  border-color: rgba(0, 0, 0, 0);
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  display: flex;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #111111;
+}
+
+.js-modal-close:hover,
+.js-modal-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Для мобільних пристроїв з шириною екрану до 375px */
+@media (max-width: 375px) {
+  .modal {
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 762px;
+    padding: 20px;
+  }
+}
+
+/* Для планшетних пристроїв з шириною екрану від 376px до 768px */
+@media (min-width: 376px) and (max-width: 768px) {
+  .modal {
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Для десктопних пристроїв з шириною екрану від 769px до 1440px */
+@media (min-width: 769px) and (max-width: 1440px) {
+  .modal {
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
