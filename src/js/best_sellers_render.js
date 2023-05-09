@@ -8,7 +8,7 @@ const galleryBook = document.querySelector('.book-gallery');
 let category = '';
 
 // BEST SELLERS
-async function renderCategory() {
+export async function renderCategory() {
   try {
     const { data } = await fetchBooks.fetchTopBooks();
     return data;
