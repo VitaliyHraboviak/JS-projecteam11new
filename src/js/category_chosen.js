@@ -1,4 +1,4 @@
- import renderCategory from './best_sellers_render'
+import {renderCategory} from './best_sellers_render'
 
 const categoriesBlock = document.querySelector('.categories-list');
 categoriesBlock.addEventListener('click', chooseCategory);
