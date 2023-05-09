@@ -1,5 +1,5 @@
 import {renderCategory} from './best_sellers_render'
-import { FetchBooks } from './best_sellers_fetch';
+import {FetchBooks} from './best_sellers_fetch';
 const categoriesBlock = document.querySelector('.categories-list');
 categoriesBlock.addEventListener('click', chooseCategory);
 const topBooks = document.querySelector('.book-gallery');
