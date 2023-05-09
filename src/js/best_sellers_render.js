@@ -41,20 +41,20 @@ async function renderCategory() {
         book => `
           <li class="item-category-book" data-book-id="${book._id}">
             <a class="link-books-render" href="#" onclick="event.preventDefault()">
-              <div class="card-book">
+              
                 <div class="img-card-book">
                   <img src="${book.book_image}" alt="book" class="img-book">
                   
                 </div>
-                <div class="box-text-book-best">
-                  <div class="box-title">
+                <div class="book-info">
+                  
                     <p class="title-book">${book.title}</p>
-                  </div>
-                  <div class="box-author">
+                  
+                  
                     <p class="author-book">${book.author}</p>
-                  </div>
+                 
                 </div>
-              </div>
+              
             </a>
           </li>
         `
@@ -100,20 +100,20 @@ async function seeMoreBooks (event) {
         bookList += `
           <li class="item-category-book" data-book-id="${_id}">
             <a class="link-books-render" href="#" onclick="event.preventDefault()">
-              <div class="card-book">
+              
                 <div class="img-card-book">
                   <img src="${book_image}" alt="book" class="img-book">
                   
                 </div>
                 <div class="box-text-book-category">
-                  <div class="box-title">
+                  
                     <p class="title-book">${title}</p>
-                  </div>
-                  <div class="box-author">
+                  
+                  
                     <p class="author-book">${author}</p>
-                  </div>
+                 
                 </div>
-              </div>
+              
             </a>
           </li>
           `;
@@ -125,7 +125,7 @@ async function seeMoreBooks (event) {
         'beforebegin',
         `<h2 class="title-category">${category}</h2>`
       );
-      scrollToBegin();
+      // scrollToBegin();
 
       const titleLastWord = galleryBook.previousElementSibling;
 
@@ -166,8 +166,8 @@ let currentRenderWidth = window.innerWidth;
 addEventListener('resize', () => {
   if (
     (window.innerWidth > 767 && currentRenderWidth < 768) ||
-    (window.innerWidth > 1279 && currentRenderWidth < 1280) ||
-    (window.innerWidth < 1280 && currentRenderWidth > 1279) ||
+    (window.innerWidth > 1439 && currentRenderWidth < 1440) ||
+    (window.innerWidth < 1440 && currentRenderWidth > 1439) ||
     (window.innerWidth < 768 && currentRenderWidth > 767)
   ) {
     currentRenderWidth = window.innerWidth;
@@ -175,6 +175,6 @@ addEventListener('resize', () => {
   }
 });
 
-function scrollToBegin () {
-  galleryBook.previousElementSibling.scrollIntoView({ behavior: 'smooth' });
-}
+// function scrollToBegin () {
+//   galleryBook.previousElementSibling.scrollIntoView({ behavior: 'smooth' });
+// }
