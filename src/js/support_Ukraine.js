@@ -60,8 +60,13 @@ if (index === 1) {
 });
 
 prev.addEventListener("click", function () {
-
-  index -= 1;
+ track.style.transform = "translateY(" + index * -height + "px)";
+  
+  if (track.offsetHeight - index * height < height * 1) {
+    next.classList.add("hide");
+    
+  } index = 0;
+  
   next.classList.remove("hide");
   if (index === 0) {
     prev.classList.remove("hide");
