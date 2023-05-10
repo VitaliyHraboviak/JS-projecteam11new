@@ -10,13 +10,13 @@ fetch('https://books-backend.p.goit.global/books/category-list', {
     // console.log({ resData });
     const categoriesList = document.querySelector('.categories-list');
     const markup = resData.map(buildCategoriesListMarkup).join('');
-    categoriesList.innerHTML = markup;
+    categoriesList.insertAdjacentHTML('beforeend' , markup)
   });
 
 function buildCategoriesListMarkup({ list_name }) {
   const listName = list_name;
   return `
-         <li><a href="" class="categories-item">${listName}</a></li>
+         <li class="categories-item">${listName}</li>
     `;
 }
 /////////////////////////////////////////////
@@ -33,6 +33,21 @@ export async function makeCategoriesListArray() {
     .then(resData => {
       console.log(resData);
       resData.map(createCategoriesPull);
+
+      const listCategory = document.querySelectorAll('.categories-item');
+    listCategory.forEach(itemCategory => {
+      itemCategory.addEventListener('click', event => {
+        const ActiveCategory = document.querySelector(
+          '.categories-item.active'
+        );
+        if (ActiveCategory) {
+          ActiveCategory.classList.remove('active');
+        }
+        event.target.classList.add('active');
+      });
+    });
+  
+
 
       function createCategoriesPull() {
         // console.log(resData);
