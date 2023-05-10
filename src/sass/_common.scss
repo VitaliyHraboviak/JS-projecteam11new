@@ -5,24 +5,40 @@
     --header-bg-color: #FFFFFF;
     --main-bg-color:#F6F6F6;
     --text-dark: #111111;
-    --text-light: #11111199;    ;
+    --text-light: #11111199;    
     --active-category-color: #4F2EE8;
     --btn-color: #EAC645;
     --light-grey: #B4AFAF;
     --light-color: #E0E0E0;
     --black-color: #000000;
     --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);    
+    --border:  #111111;
 }
 
+.light-mode.night,
+.container-header.night {
+  background-color: #111111;
+  --header-bg-color: #111111;    
+  --main-bg-color: #202024;    
+  --text-dark: #F3F3F3;
+  --text-light: #FFFFFF99;    
+  --active-category-color: #EAC645;    
+  --cubic-bezier: var(--cubic-bezier);  
+  --border: #FFFFFF;
+}
+
+
+
 @media (prefers-color-scheme: dark) {
-    :root:not([theme="light"]) {
-    --header-bg-color: #111111;    
-    --main-bg-color: #202024;    ;
-    --text-dark: #F3F3F3;
-    --text-light: #FFFFFF99;    
-    --active-category-color: #EAC645;    ;
-    --cubic-bezier: var(--cubic-bezier);    
-    }
+  :root:not([theme="light"]) {
+  --header-bg-color: #111111;    
+  --main-bg-color: #202024;    
+  --text-dark: #F3F3F3;
+  --text-light: #FFFFFF99;    
+  --active-category-color: #EAC645;    
+  --cubic-bezier: var(--cubic-bezier);    
+  }
+
 }
 
 body {

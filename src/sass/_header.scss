@@ -1,6 +1,19 @@
 	
 /*   ____________________________  mobile   _______________________________________   */
 
+.light-mode.night,
+.container-header.night {
+  background-color: #111111;
+  --header-bg-color: #111111;    
+  --main-bg-color: #202024;    
+  --text-dark: #F3F3F3;
+  --text-light: #FFFFFF99;    
+  --active-category-color: #EAC645;    
+  --cubic-bezier: var(--cubic-bezier);  
+  --border: #FFFFFF;
+}
+
+
 .icon {
     display: inline-block;
     stroke-width: 0;
@@ -18,8 +31,7 @@
       height: 64px;
       left: 0px;
       top: 0px;
-      background: #FFFFFF;
-      border: 1.5px solid #111111;
+      border: 1.5px solid var(--border);
       border-radius: 0px 0px 8px 8px;
       font-family: 'DM Sans', sans-serif;  
       display: flex;
@@ -65,7 +77,7 @@
   
   .bookshelf {
     
-    color: #000000;
+    color: var(--text-dark);
     order: 1;
     flex-grow: 0;
     margin-left: 30px;
@@ -79,7 +91,6 @@
     .header-button {
     width: 152px;
     height: 42px;
-    background-color: var(--main-yellow);
     transition: background-color 250ms var(--cubic-bezier);
     border-radius: 10px;
     justify-content: center;
@@ -107,7 +118,9 @@
     flex: none;
     order: 1;
     flex-grow: 0;
-  
+  border: none;
+  background: transparent;
+  color: var(--border);
     }
       
     .header-button-span-text {
@@ -184,8 +197,7 @@
       height: 64px;
       left: 0px;
       top: 0px;
-      background: #FFFFFF;
-      border: 1.5px solid #111111;
+      border: 1.5px solid var(--border);
       border-radius: 0px 0px 8px 8px;
       align-items: center;
       display: flex;
@@ -208,7 +220,7 @@
       
   .bookshelf {
     
-  color: #000000;
+    color: var(--text-dark);
   order: 1;
   flex-grow: 0;
   margin-left: 30px;
@@ -260,8 +272,7 @@
         height: 64px;
         left: 0px;
         top: 0px;
-        background: #FFFFFF;
-        border: 1.5px solid #111111;
+        border: 1.5px solid var(--border);
         border-radius: 0px 0px 8px 8px;
         align-items: center;
         display: flex;
@@ -279,7 +290,7 @@
   
     .bookshelf {
     
-      color: #000000;
+      color: var(--text-dark);
       order: 1;
       flex-grow: 0;
       margin-left: 30px;
@@ -313,15 +324,14 @@
         left: 0px;
         top: 0px;
         display: flex;
-        background: #FFFFFF;
-        border: 1.5px solid #111111;
+        border: 1.5px ;
         border-radius: 0px 0px 8px 8px;
         align-items: center;
         }
   
         .bookshelf {
     
-          color: #000000;
+          color: var(--text-dark);
           order: 1;
           flex-grow: 0;
           margin-left: 30px;
@@ -358,7 +368,7 @@
         
       }
           
-    @media screen and (min-width: 768px) and (max-width: 1199px){
+    @media screen and (min-width: 768px) and (max-width: 1439px){
     
       .container-header {
         box-sizing: border-box;
@@ -368,8 +378,7 @@
         left: 0px;
         top: 0px;
         align-items: center;
-        background: #FFFFFF;
-        border: 1.5px solid #111111;
+        border: 1.5px solid var(--border);
         border-radius: 0px 0px 8px 8px;
         display: flex;
         }
@@ -378,9 +387,9 @@
     .header-button {
     position: absolute;
     width: 184px;
-  height: 45px;
-  left: 552px;
-  top: 14px;
+    height: 45px;
+    left: 552px;
+    top: 14px;
   
     box-sizing: border-box;
     background: #4F2EE8;
@@ -390,8 +399,8 @@
     }
   
     .switch {
-      position: absolute;
-      width: 40px;
+  position: absolute;
+  width: 40px;
   height: 24px;
   left: 488px;
   top: 24px;
@@ -405,7 +414,7 @@
         
         
         
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 1440px) {
     
       .container-header {
         box-sizing: border-box;
@@ -414,8 +423,7 @@
         left: 0px;
         top: 0px;
         align-items: center;
-        background: #FFFFFF;
-        border: 1.5px solid #111111;
+        border: 1.5px solid var(--border);
         border-radius: 0px 0px 8px 8px;
         display: flex;
       }
@@ -483,4 +491,3 @@
   }
   
   }
-  
