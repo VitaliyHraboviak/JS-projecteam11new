@@ -105,7 +105,7 @@ async function seeMoreBooks (event) {
                   <img src="${book_image}" alt="book" class="img-book">
                   
                 </div>
-                <div class="box-text-book-category">
+                <div class="book-info">
                   
                     <p class="title-book">${title}</p>
                   
@@ -136,7 +136,7 @@ async function seeMoreBooks (event) {
           const lastWord = allWords[allWords.length - 1];
           titleLastWord.innerHTML = textTitle.replace(
             lastWord,
-            `<span class="title-last-word-color">${lastWord}</span>`
+            `<span class="second-category-word">${lastWord}</span>`
           );
         }
         return;
