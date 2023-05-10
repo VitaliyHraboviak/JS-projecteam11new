@@ -101,6 +101,11 @@ cursor: pointer;
     
 }
 
+.book-info {
+    padding-top: 14px;
+    padding-bottom: 4px;
+}
+
 .book-info-category {
     margin-bottom: 40px;
 }
@@ -157,6 +162,15 @@ cursor: pointer;
 
         margin-top: 100px;
     }
+
+        .title-best-sellers,
+        .title-category {
+    
+            font-size: 48px;
+            line-height: 1.08;
+            
+        
+        }
 
     .img-card-book {
         width: 218px;
