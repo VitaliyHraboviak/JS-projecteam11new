@@ -3,19 +3,26 @@ import {FetchBooks} from './best_sellers_fetch';
 const categoriesBlock = document.querySelector('.categories-list');
 categoriesBlock.addEventListener('click', chooseCategory);
 const topBooks = document.querySelector('.book-gallery');
+const allCategories = document.querySelector('.all-categories')
+allCategories.addEventListener('click', reloadCat)
+
+function reloadCat() {
+  location.reload()
+}
+
 function chooseCategory(event) {
   event.preventDefault();
-  // console.dir(event);
+  console.dir(event);
   // console.dir(event.target.value);
   // console.dir(event.target.classList);
 
-  if (event.target.innerHTML === 'All categories') {
+  if (event.target.classList.contains("all-categories")) {
     renderCategory();
     if (topBooks.innerHTML) {
       topBooks.innerHTML = '';
     }
     return;
-  } else if (event.target.nodeName !== 'A') {
+  } else if (event.target.nodeName !== 'LI') {
     return;
   } else {
     const selectedCategory = event.target.textContent;
