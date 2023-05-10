@@ -13,6 +13,8 @@
     --black-color: #000000;
     --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);    
     --border:  #111111;
+    --white-color: #FFFFFF;
+    --violet-color: #4F2EE8;
 }
 
 .light-mode.night,
@@ -35,8 +37,8 @@
   --main-bg-color: #202024;    
   --text-dark: #F3F3F3;
   --text-light: #FFFFFF99;    
-  --active-category-color: #EAC645;    
-  --cubic-bezier: var(--cubic-bezier);    
+  --active-category-color: #EAC645;   
+  --cubic-bezier: var(--cubic-bezier);   
   }
 
 }
