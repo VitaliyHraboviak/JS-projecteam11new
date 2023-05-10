@@ -12,12 +12,13 @@ track.insertAdjacentHTML('beforeend', cardsMarkup);
 
 
 function createGalleryMarkup(images) {
-  return images.map(({ title, url, img }) => {
+  return images.map(({ title, url, img, img2 }) => {
       return `
             <li class="card-container"> 
                 <a href="${url}"> 
                     <img 
                         class="card card1" 
+                        srcset="${img} 1x, ${img2} 2x"
                         src="${img}" 
                     /> 
                 </a> 
