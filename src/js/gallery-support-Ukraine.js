@@ -1,4 +1,4 @@
- import IMAGES from '../images/icon/icon.js';
+import IMAGES from '../images/icon/icon';
 
 
 export const gallerysupport = [

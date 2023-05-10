@@ -36,15 +36,12 @@ window.addEventListener("resize", function () {
 });
 
 next.addEventListener("click", function (e) {
-  console.log('click');
-  console.log(isNextClick);
-  console.log(index);
   e.preventDefault();
   index += 1;
   if (isNextClick && index > 1) {
     index = 0;
   }
-  console.log(index);
+  
   prev.classList.add("show");
   track.style.transform = "translateY(" + index * -height + "px)";
   
@@ -52,21 +49,17 @@ next.addEventListener("click", function (e) {
     next.classList.add("hide");
     
   } index = 0;
-    console.log(isNextClick);
-  console.log(index);
+
 if (index === 1) {
     isNextClick = true;
   } else {
     isNextClick = false;
   }
-    console.log(isNextClick);
-  console.log(index);
+
 });
 
 prev.addEventListener("click", function () {
-  console.log('click 2');
-  console.log(isNextClick);
-  console.log(index);
+
   index -= 1;
   next.classList.remove("hide");
   if (index === 0) {
