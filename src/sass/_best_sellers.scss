@@ -171,14 +171,11 @@ transform: scale(1.05);
 // ===================== TABLET ==================================
 
 @media screen and (min-width: 768px) {
-    .book-container {
-
-        margin-top: 100px;
-    }
+    
 
         .title-best-sellers,
         .title-category {
-    
+           
             font-size: 48px;
             line-height: 1.08;
             
@@ -212,17 +209,37 @@ transform: scale(1.05);
     }
 }
 
-// @media screen and (max-width: 1439px) {
-// .img-card-book {
-//         width: 218px;
-//         height: 316px;
-//     }
 
-// }
+@media screen and (min-width: 1439px) {
+
+    .book-container {
+        margin-top: 100px;
+
+    }
+}
+
 
 // ================== DESKTOP ================================
 
 @media screen and (min-width: 1440px) {
+
+    .main {
+        display: flex;
+    }
+
+    .book-container {
+        max-width: 996px;
+    }
+
+    .order {
+        flex-direction: column;
+    }
+    
+    // .title-best-sellers,
+    // .title-category {
+      
+    //     margin-top: 40px;
+    // }
 
     .img-card-book {
         width: 180px;
@@ -249,6 +266,10 @@ transform: scale(1.05);
 
         font-size: 18px;
     }
+
+    // .bestsellers-section {
+    //     width: 1440px;
+    // }
 }
 
 
@@ -318,6 +339,30 @@ transform: scale(1.05);
     }
 }
 
+
+// =================================== MAIN перенести в common ==========================
+
+
+// .main {
+
+//     padding: 40px 20px;
+   
+
+// }
+
+@media screen and (max-width: 767px) {
+    .main {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .order {
+        display: flex;
+    }
+}
+
+// ==========================================================
 
 
 
