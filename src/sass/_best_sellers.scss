@@ -58,9 +58,16 @@ cursor: pointer;
 
 
 .img-book {
-    
+    transition: transform 350ms ease-in-out, filter 350ms ease-in-out;
     border-radius: 8px;
 }
+
+.img-book:hover {
+
+transform: scale(1.05);
+}
+
+
 
 .book-card {
     color: var(--text-dark);
@@ -112,6 +119,8 @@ cursor: pointer;
 
 
 
+
+
 .see-more {
     font-family: inherit;
     font-weight: 700;
@@ -138,6 +147,8 @@ cursor: pointer;
 
 
 
+
+
 .book-gallery {
     display: flex;
     flex-direction: column;
@@ -147,7 +158,7 @@ cursor: pointer;
 
 // ===================== MODAL =====================================
 
-@media screen and (max-width: 374.98px) {
+@media screen and (max-width: 375px) {
     .img-card-book {
         width: 100%;
         height: 485px;
@@ -172,15 +183,15 @@ cursor: pointer;
         
         }
 
-    .img-card-book {
-        width: 218px;
-        height: 316px;
-    }
+    // .img-card-book {
+    //     width: 218px;
+    //     height: 316px;
+    // }
 
     .book-info {
 
         width: 218px;
-        margin-top: 14px;
+        
         margin-bottom: 20px;
     }
 
@@ -197,6 +208,14 @@ cursor: pointer;
         row-gap: 40px;
         justify-content: space-between;
     }
+}
+
+@media screen and (max-width: 1439px) {
+.img-card-book {
+        width: 218px;
+        height: 316px;
+    }
+
 }
 
 // ================== DESKTOP ================================
@@ -222,6 +241,11 @@ cursor: pointer;
         gap: 21px;
         row-gap: 40px;
         justify-content: unset; 
+    }
+
+    .item-category {
+
+        font-size: 18px;
     }
 }
 
