@@ -1,6 +1,6 @@
 
 // DATA LocalStorage []
-export const DATA_BOOKS = [
+export const bookList = [
     {
         coverImage: 'https://storage.googleapis.com/du-prd/books/images/9780063226050.jpg',
         title: '1',

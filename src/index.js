@@ -7,5 +7,5 @@ import './js/category_book_profile';
 import './js/category';
 import './js/change_theme';
 import './js/modal_window_object';
-import './js/shopping_list';
+// import './js/shopping_list';
 import './js/support_Ukraine';
