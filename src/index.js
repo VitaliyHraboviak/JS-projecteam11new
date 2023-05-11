@@ -8,7 +8,3 @@ import './js/category';
 import './js/change_theme';
 import './js/modal_window_object';
 // import './js/shopping_list';
-import './js/support_Ukraine';
-import './js/header';
-// import './js/authorization_modal_close'
-// import './js/authorization_modal_user'

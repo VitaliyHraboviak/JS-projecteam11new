@@ -4,8 +4,11 @@ console.log('my_shopping-list-Серг');
 //http://localhost:1234/shopping_books.html
 
 
-import {DATA_BOOKS} from './shopping_data.js';
-// console.log(DATA_BOOKS[1].title);
+import {bookList} from './shopping_data.js';
+
+//     const bookList = JSON.parse(localStorage.getItem('bookList')) || [];
+//     bookList.push(bookDetails);
+//     localStorage.setItem('bookList', JSON.stringify(bookList));
 
 // IMAGES
 import Amazon from '../images/icon/amazon.png';
@@ -19,7 +22,7 @@ const titleEl = document.querySelector('.shopping-title');
 titleEl.addEventListener('click', onRender);
 
 let isMobileScreen = onMobileScreen(); //Мобильная версия? true. false
-let totalBook = DATA_BOOKS.length; //Всего книг в памяти
+let totalBook = bookList.length; //Всего книг в памяти
 let perPage = makePerPage(); //Количество книг на странице      3 / 4 
 let totalPage = Math.ceil(totalBook / perPage); //К-во страниц
 let lastPerPage = makeLastPerPage(); //Остаток книг неполной страницы
@@ -38,6 +41,8 @@ console.log('totalPage', totalPage);
 console.log('currentPage', currentPage);
 console.log('maxBtn', maxBtn);
 console.log('howManyBtn', howManyBtn);
+
+
 
 
 
@@ -334,7 +339,7 @@ function onRemoveBook(event) {
     // Видалення книжки по data-set
     const numDataSet = Number(event.target.dataset.set);
     const indexDelete = numDataSet + (currentPage - 1) * perPage;
-    DATA_BOOKS.splice(indexDelete, 1);
+    bookList.splice(indexDelete, 1);
     totalBook -= 1; //удалили книгу с памяти массива
 
     //Если книг нет Выход 
@@ -401,27 +406,27 @@ function onRender() {
         const markaup = `
             <li class="shopping-item">
                 <div class="item-card-thumb">
-                    <img src="${DATA_BOOKS[i+x].coverImage}" alt="book">
+                    <img src="${bookList[i+x].coverImage}" alt="book">
                 </div>       
                 <div class="item-card-wrap">
-                    <h3 class="item-card-title">${DATA_BOOKS[i+x].title}</h3>
-                    <p class="item-card-category">${DATA_BOOKS[i+x].list_name}</p>
-                    <p class="item-card-desc">${DATA_BOOKS[i+x].description}</p>       
+                    <h3 class="item-card-title">${bookList[i+x].title}</h3>
+                    <p class="item-card-category">${bookList[i+x].list_name}</p>
+                    <p class="item-card-desc">${bookList[i+x].description}</p>       
                     <div class="item-card-bottom-wrap">
-                        <p class="item-card-author">${DATA_BOOKS[i+x].author}</p>
+                        <p class="item-card-author">${bookList[i+x].author}</p>
                         <ul class="item-card-stores-wrap">
                             <li class="item-card-icons">
-                                <img src=${Amazon} width="32" alt=" ">
+                                <img src=${Amazon} width="32" alt="b">
                             </li>
                             <li class="item-card-icon">
-                                <img src=${Book} width="16" alt=" ">
+                                <img src=${Book} width="30" alt="b">
                             </li>
                             <li class="item-card-icon">
-                                <img src=${BookShop} width="16" alt=" ">
+                                <img src=${BookShop} width="30" alt="b">
                             </li>
                         </ul>
                     </div>
-                    <button class="remove-btn" data-set="${i}">${i}</button>
+                    <button class="remove-btn" data-set="${i}">x</button>
                 </div>
             </li>
         `;
@@ -469,7 +474,7 @@ function onResetList() {
 
 
     isMobileScreen = onMobileScreen(); //Мобильная версия? true. false
-    totalBook = DATA_BOOKS.length; //Всего книг в памяти
+    totalBook = bookList.length; //Всего книг в памяти
     perPage = makePerPage(); //Количество книг на странице      3 / 4 
     totalPage = Math.ceil(totalBook / perPage); //К-во страниц
     lastPerPage = makeLastPerPage(); //Остаток книг неполной страницы
@@ -582,11 +587,29 @@ function onRenderButtons() {
 
 
 
+// ЛЕНА
+
+// const bookDetails = {};
+
+// fetch(apiUrl)
+//   .then(response => response.json())
+//   .then(data => {
+//     bookDetails.title = data.title;
+//     bookDetails.author = data.author;
+//     bookDetails.description = data.description;
+//     bookDetails.coverImage = data.coverImage;
+//     bookDetails.purchaseLinks = data.purchaseLinks;
+//     updateModal();
 
 
+//     const bookList = JSON.parse(localStorage.getItem('bookList')) || [];
+//     bookList.push(bookDetails);
+//     localStorage.setItem('bookList', JSON.stringify(bookList));
 
+//   })
+//   .catch(error => console.error(error));
 
-
+// ЛЕНА / 
 
 
 
@@ -614,21 +637,21 @@ function onRenderButtons() {
 // // Get book details from API
 // const bookId = 'bookId';
 // const apiUrl = https://books-backend.p.goit.global/books/${bookId};
-// const DATA_BOOKS = {};
+// const bookList = {};
 
 // fetch(apiUrl)
 //   .then(response => response.json())
 //   .then(data => {
-//     DATA_BOOKS.title = data.title;
-//     DATA_BOOKS.author = data.author;
-//     DATA_BOOKS.description = data.description;
-//     DATA_BOOKS.coverImage = data.coverImage;
-//     DATA_BOOKS.purchaseLinks = data.purchaseLinks;
+//     bookList.title = data.title;
+//     bookList.author = data.author;
+//     bookList.description = data.description;
+//     bookList.coverImage = data.coverImage;
+//     bookList.purchaseLinks = data.purchaseLinks;
 //     updateModal();
 
 //     // Add book details to the bookList array
 //     const bookList = JSON.parse(localStorage.getItem('bookList')) || [];
-//     bookList.push(DATA_BOOKS);
+//     bookList.push(bookList);
 //     localStorage.setItem('bookList', JSON.stringify(bookList));
 //   })
 //   .catch(error => console.error(error));
@@ -636,22 +659,22 @@ function onRenderButtons() {
 // // Update modal with book details
 // function updateModal() {
 //   const modal = document.querySelector('.modal');
-//   const DATA_BOOKSContainer = document.querySelector('.book-details');
+//   const bookListContainer = document.querySelector('.book-details');
 
 //   // Create modal content with book details
 //   const modalContent = 
 //     <div class="book-info">
-//       <img src="${DATA_BOOKS.coverImage}" alt="Book Cover" />
+//       <img src="${bookList.coverImage}" alt="Book Cover" />
 //       <div>
-//         <h2>${DATA_BOOKS.title}</h2>
-//         <p>by ${DATA_BOOKS.author}</p>
-//         <p>${DATA_BOOKS.description}</p>
+//         <h2>${bookList.title}</h2>
+//         <p>by ${bookList.author}</p>
+//         <p>${bookList.description}</p>
 //       </div>
 //     </div>
 //     <div class="purchase-links">
 //       <h3>Buy Now:</h3>
 //       <ul>
-//         ${DATA_BOOKS.purchaseLinks.map(link => 
+//         ${bookList.purchaseLinks.map(link => 
 //           <li>
 //             <a href="${link.url}" target="_blank" rel="noopener noreferrer">
 //               <img src="${link.logoUrl}" alt="${link.name}" />
@@ -665,7 +688,7 @@ function onRenderButtons() {
 //       <button class="remove-from-list-btn">Remove from Shopping List</button>
 //     </div>
 //   ;
-//   DATA_BOOKSContainer.innerHTML = modalContent;
+//   bookListContainer.innerHTML = modalContent;
 // }
 // ось js та там є масив з збереженням у локал сторедж
 
