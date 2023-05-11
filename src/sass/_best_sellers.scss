@@ -22,12 +22,15 @@ cursor: pointer;
 
 // // CARDS
 
-.book-container {
-    justify-content: center;
-        margin-left: auto;
-        margin-right: auto;
-    margin-top: 40px;
-}
+
+// @media screen and (max-width: 767px) {
+
+//   .book-container  {   width: 100%;
+//     max-width: 375px;
+//     padding-left: 20px;
+//     padding-right: 20px;
+// }
+// }
 
 
 .title-best-sellers,
@@ -163,6 +166,16 @@ transform: scale(1.05);
 
 // ===================== MODAL =====================================
 
+@media screen and (min-width: 375px) {
+
+    .book-container {
+        width: 100%;
+        max-width: 375px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
 @media screen and (max-width: 374.98px) {
     .img-card-book {
         width: 100%;
@@ -174,13 +187,20 @@ transform: scale(1.05);
 // ===================== TABLET ==================================
 
 @media screen and (min-width: 768px) {
+
+    .book-container {
+
+        padding-left: 32px;
+        padding-right: 32px;
+    }
     
 
         .title-best-sellers,
         .title-category {
-           
+             white-space: nowrap;
             font-size: 48px;
             line-height: 1.08;
+            
             
         
         }
@@ -239,7 +259,9 @@ transform: scale(1.05);
     }
 
     .book-container {
-        // max-width: 996px;
+        width: 1440px;
+        padding-left: 24px;
+         padding-right: 24px;
     }
 
     // .order {
