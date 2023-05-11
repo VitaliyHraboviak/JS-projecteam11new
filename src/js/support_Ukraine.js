@@ -12,12 +12,13 @@ track.insertAdjacentHTML('beforeend', cardsMarkup);
 
 
 function createGalleryMarkup(images) {
-  return images.map(({ title, url, img }) => {
+  return images.map(({ title, url, img, img2 }) => {
       return `
             <li class="card-container"> 
                 <a href="${url}"> 
                     <img 
                         class="card card1" 
+                        srcset="${img} 1x, ${img2} 2x"
                         src="${img}" 
                     /> 
                 </a> 
@@ -59,8 +60,13 @@ if (index === 1) {
 });
 
 prev.addEventListener("click", function () {
-
-  index -= 1;
+ track.style.transform = "translateY(" + index * -height + "px)";
+  
+  if (track.offsetHeight - index * height < height * 1) {
+    next.classList.add("hide");
+    
+  } index = 0;
+  
   next.classList.remove("hide");
   if (index === 0) {
     prev.classList.remove("hide");

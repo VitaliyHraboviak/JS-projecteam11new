@@ -1,0 +1,86 @@
+<!-- <h1>Сергей</h1> -->
+
+<div class="container">
+    <div class="temp-header">
+        <!-- <input type="text"> -->
+        <!-- <button type="button" data-render>Render HTML</button> -->
+        <!-- <button type="button" data-reset>Reset</button> -->
+    </div>
+
+
+    <div class="shopping-list-wrapper">
+
+        <h1 class="shopping-title">Shopping <span>List</span></h1>
+        <!-- EMPTY BOOKS -->
+        <div class="empty-book-wrapper">
+            <div class="empty-book-text-wrapper">
+                <p class="empty-book-text">Клікни мишкою на заголовок.  Клікни мишкою на заголовок. </p>
+                <!-- <p class="empty-book-text">This page is empty, add some books and proceed to order.</p> -->
+            </div>
+            
+            <div class="thumb-img-shop">
+                <!-- <img src="./images/img/IMG_96061.png" alt="No books"> -->
+
+                <picture>
+                    <source
+                      srcset="./images/img/IMG_960612x.png 1x, ./images/img/IMG_960612x.png 2x"
+                      media="(min-width: 768px)"
+                    />
+                    <img src="./images/img/IMG_96061.png" alt="No books">
+                </picture>
+
+            </div>
+        </div>
+
+
+        <!-- LIST BOOKS -->
+        <ul class="shopping-list">
+
+            <!-- КАРТОЧКА  -->
+            <!-- <li class="shopping-item">
+                <div class="item-card-thumb">
+                    <img src="./images/img/IMG_9606 1.png" alt="book">
+                </div>
+                
+                <div class="item-card-wrap">
+                    <h3 class="item-card-title">I will find you</h3>
+                    <p class="item-card-category">Hardcover fiction</p>
+                    <p class="item-card-desc">David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while</p>
+                    
+                    <div class="item-card-bottom-wrap">
+                        <p class="item-card-author">Harlan Coben</p>
+                        <ul class="item-card-stores-wrap">
+                            <li class="item-card-icons">
+                                <img src="./images/icon/amazon.png" width="32" alt="am">
+                            </li>
+                            <li class="item-card-icon">
+                                <img src="./images/icon/Book.png" width="16" alt="b">
+                            </li>
+                            <li class="item-card-icon">
+                                <img src="./images/icon/BookShop.png" width="16" alt="b">
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="remove-btn">dl</button>
+                </div>
+            </li> -->
+
+            <!-- <li class="shopping-item">Book</li> -->
+        </ul>
+
+
+        <!-- TURN BUTTONS -->
+        <ul class="shopping-list-btn is-hidden">
+            <li><button class="turn-start" type="button" data-turn="start"> << </button></li>
+            <li><button class="turn-prev" type="button" data-turn="prev"> < </button></li>
+            <li><button class="turn-first is-hidden" type="button" data-turn="first">1</button></li>
+            <li><button class="turn-second is-hidden" type="button" data-turn="second">2</button></li>
+            <li><button class="turn-third is-hidden" type="button" data-turn="third">3</button></li>
+            <li><button class="turn-rest is-hidden" type="button" data-turn="rest">...</button></li>
+            <li><button class="turn-next" type="button" data-turn="next"> > </button></li>
+            <li><button class="turn-end" type="button" data-turn="end"> >> </button></li>
+        </ul>
+
+    </div>
+    
+</div>

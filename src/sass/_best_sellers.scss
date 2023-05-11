@@ -27,7 +27,8 @@ cursor: pointer;
 }
 
 
-.title-best-sellers {
+.title-best-sellers,
+.title-category {
     
     font-size: 32px;
     line-height: 1.19;
@@ -37,7 +38,8 @@ cursor: pointer;
     margin-bottom: 40px;
 }
 
-.title-best-sellers-color {
+.title-best-sellers-color,
+.second-category-word {
     color: var(--active-category-color);
 }
 
@@ -56,9 +58,18 @@ cursor: pointer;
 
 
 .img-book {
-    
+    transition: transform 350ms ease-in-out, filter 350ms ease-in-out;
     border-radius: 8px;
 }
+
+.img-book:hover {
+
+transform: scale(1.05);
+}
+
+
+
+
 
 .book-card {
     color: var(--text-dark);
@@ -73,7 +84,7 @@ cursor: pointer;
     letter-spacing: -0.04em;
     white-space: nowrap;
     text-overflow: ellipsis;
-    text-transform: uppercase;
+    overflow: hidden;
     color: var(--text-dark);
     margin-bottom: 4px;
 }
@@ -89,14 +100,6 @@ cursor: pointer;
     padding-bottom: 4px;
 }
 
-.title-category {
-    font-size: 32px;
-    line-height: 1.19;
-    color: var(--text-dark);
-    letter-spacing: -0.04em;
-    text-transform: capitalize;
-    margin-bottom: 40px;
-}
 
 .author-book-category {
     
@@ -106,6 +109,17 @@ cursor: pointer;
     letter-spacing: -0.04em;
     
 }
+
+.book-info {
+    padding-top: 14px;
+    padding-bottom: 4px;
+}
+
+.book-info-category {
+    margin-bottom: 40px;
+}
+
+
 
 
 
@@ -135,6 +149,8 @@ cursor: pointer;
 
 
 
+
+
 .book-gallery {
     display: flex;
     flex-direction: column;
@@ -155,10 +171,16 @@ cursor: pointer;
 // ===================== TABLET ==================================
 
 @media screen and (min-width: 768px) {
-    .book-container {
+    
 
-        margin-top: 100px;
-    }
+        .title-best-sellers,
+        .title-category {
+           
+            font-size: 48px;
+            line-height: 1.08;
+            
+        
+        }
 
     .img-card-book {
         width: 218px;
@@ -168,7 +190,7 @@ cursor: pointer;
     .book-info {
 
         width: 218px;
-        margin-top: 14px;
+        
         margin-bottom: 20px;
     }
 
@@ -187,17 +209,46 @@ cursor: pointer;
     }
 }
 
+
+@media screen and (min-width: 1439px) {
+
+    .book-container {
+        margin-top: 100px;
+
+    }
+}
+
+
 // ================== DESKTOP ================================
 
 @media screen and (min-width: 1440px) {
 
+    .main {
+        display: flex;
+    }
+
+    .book-container {
+        max-width: 996px;
+    }
+
+    .order {
+        flex-direction: column;
+    }
+    
+    // .title-best-sellers,
+    // .title-category {
+      
+    //     margin-top: 40px;
+    // }
+
     .img-card-book {
-        width: 160px;
-        height: 228px;
+        width: 180px;
+        height: 256px;
     }
 
     .book-info {
         margin-bottom: 32px;
+        width: 180px;
     }
 
 
@@ -210,6 +261,15 @@ cursor: pointer;
         row-gap: 40px;
         justify-content: unset; 
     }
+
+    .item-category {
+
+        font-size: 18px;
+    }
+
+    // .bestsellers-section {
+    //     width: 1440px;
+    // }
 }
 
 
@@ -279,6 +339,30 @@ cursor: pointer;
     }
 }
 
+
+// =================================== MAIN перенести в common ==========================
+
+
+// .main {
+
+//     padding: 40px 20px;
+   
+
+// }
+
+@media screen and (max-width: 767px) {
+    .main {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .order {
+        display: flex;
+    }
+}
+
+// ==========================================================
 
 
 
