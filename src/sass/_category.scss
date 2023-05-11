@@ -1,6 +1,7 @@
-// .active {
-//     color: yellow;
-// }
+.active {
+    color: yellow;
+    font-size: xx-large;
+}
 
 
  
@@ -36,7 +37,7 @@
     line-height: 1.12;
     letter-spacing: -0.02em;
   
-    color: rgba(17, 17, 17, 0.6);
+    color: var(--text-light);
     cursor: pointer;
     transform: scale(0.97);
     transform-origin: center left;
@@ -92,3 +93,35 @@
       height: 472px;
     }
   }
+
+  main {
+    display: flex;
+    flex-direction: row-reverse; 
+  }
+
+aside {
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 86px;
+}
+
+  aside,
+  .book-container {
+    padding-top: 72px;
+  }
+
+  .title-book {
+    overflow: hidden;
+  }
+
+//   @media screen and (min-width: 1440px) {
+// .link-books-render {
+//     width: 160px;
+//     height: 228px;}}
+
+    @media screen and (max-width: 374.98px) {
+        main {
+            flex-direction:column-reverse;
+        }
+    }

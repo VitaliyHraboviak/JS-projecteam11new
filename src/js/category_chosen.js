@@ -1,23 +1,51 @@
 import {renderCategory} from './best_sellers_render'
 import {FetchBooks} from './best_sellers_fetch';
+// import { makeBestesselersOneMoreTime } from './best_sellers_render';
 const categoriesBlock = document.querySelector('.categories-list');
-categoriesBlock.addEventListener('click', chooseCategory);
+ 
 const topBooks = document.querySelector('.book-gallery');
 const allCategories = document.querySelector('.all-categories')
-allCategories.addEventListener('click', reloadCat)
+const allCategoriesItems = document.querySelectorAll('.categories-item')
+const allCategoriesItem = document.querySelector('.categories-item')
+ categoriesBlock.addEventListener('click', chooseCategory);
 
-function reloadCat() {
-  location.reload()
+ 
+allCategoriesItem.addEventListener('click',makeActive )
+function makeActive() {
+allCategoriesItems.forEach(itemCategory => {
+  itemCategory.addEventListener('click', event => {
+    const activeCategory = document.querySelector(
+      '.active'
+    );
+    if (activeCategory) {
+      activeCategory.classList.remove('active');
+      console.log('remove')
+    }
+    event.target.classList.add('active');
+    console.log('add')
+
+  });
+});
 }
 
 function chooseCategory(event) {
+ makeActive() 
+
   event.preventDefault();
   console.dir(event);
   // console.dir(event.target.value);
   // console.dir(event.target.classList);
 
+   
+
+
+
+   
+    // event.target.classList.toggle("active")
+  
+
   if (event.target.classList.contains("all-categories")) {
-    renderCategory();
+    // makeBestesselersOneMoreTime();///// waiting for import from bestsellersrender
     if (topBooks.innerHTML) {
       topBooks.innerHTML = '';
     }
@@ -54,21 +82,47 @@ function chooseCategory(event) {
         //   const chosen = document.querySelector('.chosen');
         const markup = resData.map(buildTopBooksMarkup).join('');
         removedChosenHTML.innerHTML = markup;
+         
+        try {
+          const categoriesTitle = document.querySelector('.title-best-sellers')
+          categoriesTitle.innerHTML = `<h2 class="title-best-sellers">${event.target.innerHTML
+          .trim()
+          .split(' ')
+          .slice(0, length - 1)
+          .join(' ')} <span class="title-best-sellers-color">${event.target.innerHTML
+          .trim()
+          .split(' ')
+          .pop()}</span></h2>`} catch (error) {
+            console.log('Oops! Something went wrong');
+          }
+         
       });
+       
 
-    function buildTopBooksMarkup({ list_name, title, author, book_image }) {
-      // console.log(books);
-      ///////insert markup for books from choosen category///////////////////////
-      //   for (let i = 0; i < resData.length; i += 1) {
-      // returning HTML markup as JS String
+    function buildTopBooksMarkup({ list_name, title, author, book_image, _id }) { 
       return `
-    <ul class="ul-chosen-categories"> 
-  <li> ${list_name}</li>
-  <li> ${title}</li>
-  <li> ${author}</li>
-  <li> <img src="${book_image}" alt="books photo" /></li>
-</ul>
+      <li class="item-category-book" data-book-id="${_id}">
+        <a class="link-books-render" href="#" onclick="event.preventDefault()">
+          
+            <div class="img-card-book">
+              <img src="${book_image}" alt="book" class="img-book">
+              
+            </div>
+            <div class="book-info">
+              
+                <p class="title-book">${title}</p>
+              
+              
+                <p class="author-book">${author}</p>
+             
+            </div>
+          
+        </a>
+      </li>
+    
     `;
     }
   }
 }
+
+ 
