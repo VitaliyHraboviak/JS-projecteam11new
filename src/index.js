@@ -10,3 +10,4 @@ import './js/modal_window_object';
 // import './js/shopping_list';
 import './js/athorization_modal_user';
 import './js/authorization_modal_close';
+import './js/support_Ukraine';
