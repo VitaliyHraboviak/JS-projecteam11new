@@ -45,7 +45,7 @@ function chooseCategory(event) {
   
 
   if (event.target.classList.contains("all-categories")) {
-    // makeBestesselersOneMoreTime();///// waiting for import from bestsellersrender
+    makeBestSellersOneTime ();///// waiting for import from bestsellersrender
     if (topBooks.innerHTML) {
       topBooks.innerHTML = '';
     }
