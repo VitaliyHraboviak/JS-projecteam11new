@@ -25,8 +25,8 @@ function getBookData(bookId) {
     author: 'Author Name',
     description: 'Book description goes here.',
     tradingPlatforms: [
-      { name: 'Platform 1', link: 'https://platform1.com' },
-      { name: 'Platform 2', link: 'https://platform2.com' },
+      { name: 'Amazon', link: 'https://amazon.com' },
+      { name: 'Platform 2', link: 'https://rozetka.com' },
       { name: 'Platform 3', link: 'https://platform3.com' },
     ],
   };
@@ -68,6 +68,17 @@ function showModal(bookData) {
     '.js-add-to-shopping-list'
   );
   addToShoppingListButton.addEventListener('click', toggleShoppingList);
+}
+const platformLogos = modalContent.querySelectorAll('.platform-logo');
+  platformLogos.forEach((logo) => {
+    logo.addEventListener('click', openTradingPlatform);
+  });
+
+
+function openTradingPlatform(event) {
+  event.preventDefault();
+  const tradingPlatformURL = event.target.closest('a').href;
+  window.open(tradingPlatformURL, '_blank');
 }
 
 
