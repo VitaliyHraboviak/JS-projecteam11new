@@ -3,7 +3,7 @@ let timer;
 
 export const scrollBtn = document.querySelector('.scroll-to-top');
 scrollBtn.addEventListener('click', () => {
-        scroller = window.pageYOffset;
+        scroll = window.pageYOffset;
         window.scrollTo(0, 0);
     scrollToTop();
     scrollBtn.style.opacity = 0.5;
@@ -11,7 +11,7 @@ scrollBtn.addEventListener('click', () => {
 
 function scrollToTop() {
     if (scroll > 0) {
-        window.scrollTo(0, scroller);
+        window.scrollTo(0, scroll);
         scroll = scroll- 20;
         timer = setTimeout(scrollToTop, 20);
     } else {

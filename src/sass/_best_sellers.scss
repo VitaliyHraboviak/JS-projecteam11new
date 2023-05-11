@@ -267,11 +267,11 @@ textarea {
     //     flex-direction: column;
     // }
 
-    // .title-best-sellers,
-    // .title-category {
+    .title-best-sellers,
+    .title-category {
 
-    //     margin-top: 40px;
-    // }
+        margin-top: 40px;
+    }
 
     .img-card-book {
         width: 180px;
@@ -361,8 +361,8 @@ textarea {
         width: 64px;
         height: 64px;
         animation-name: spin;
-        animation-duration: 1s;
-        animation-timing-function: linear;
+        // animation-duration: 500ms;
+        animation-timing-function: cubic-bezier(.29, .74, .29, .77);
         animation-iteration-count: infinite;
     }
 
