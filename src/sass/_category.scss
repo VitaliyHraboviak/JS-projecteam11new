@@ -104,10 +104,10 @@ aside {
     gap: 86px;
 }
 
-  aside,
-  .book-container {
-    padding-top: 72px;
-  }
+  // aside,                        ===============================
+  // .book-container {
+  //   padding-top: 72px;
+  // }
 
   .title-book {
     overflow: hidden;
@@ -123,3 +123,13 @@ aside {
             flex-direction:column-reverse;
         }
     }
+
+
+
+    // ==========================================
+
+         @media screen and (min-width: 375px) {
+           .categories-section {
+            padding-top: 104px;
+           }
+         }
