@@ -76,12 +76,44 @@ function hideModal() {
 }
 
 function toggleShoppingList() {
-  // Functionality to add or remove the book from the shopping list.
-  // Implement your logic here.
-  console.log('Toggle shopping list');
+ const bookId = modalContent.querySelector('.js-add-to-shopping-list').dataset.bookId;
+  const shoppingList = getShoppingList();
+
+  if (isBookInShoppingList(bookId, shoppingList)) {
+    removeFromShoppingList(bookId, shoppingList);
+  } else {
+    addToShoppingList(bookId, shoppingList);
+  }
+
+  saveShoppingList(shoppingList);
 }
 
-// bookGallery.addEventListener('click', event => {
+function getShoppingList() {
+  const shoppingList = localStorage.getItem('shoppingList');
+  return shoppingList ? JSON.parse(shoppingList) : [];
+}
+
+function isBookInShoppingList(bookId, shoppingList) {
+  return shoppingList.some((book) => book.id === bookId);
+}
+
+function addToShoppingList(bookId, shoppingList) {
+  const bookData = getBookData(bookId);
+  shoppingList.push(bookData);
+}
+
+function removeFromShoppingList(bookId, shoppingList) {
+  const bookIndex = shoppingList.findIndex((book) => book.id === bookId);
+  if (bookIndex !== -1) {
+    shoppingList.splice(bookIndex, 1);
+  }
+}
+
+function saveShoppingList(shoppingList) {
+  localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
+}
+
+ // bookGallery.addEventListener('click', event => {
 //   const clickedBook = event.target.closest('.book-card');
 //   if (clickedBook) {
 //     showModal(clickedBook);
