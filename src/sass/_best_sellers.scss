@@ -23,6 +23,9 @@ cursor: pointer;
 // // CARDS
 
 .book-container {
+    justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
     margin-top: 40px;
 }
 
@@ -221,19 +224,27 @@ transform: scale(1.05);
 
 // ================== DESKTOP ================================
 
-@media screen and (min-width: 1440px) {
+// @media screen and (max-width: 1199px) {
+//   .main {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//   }
+// }
+
+@media screen and (min-width: 1200px) {
 
     .main {
         display: flex;
     }
 
     .book-container {
-        max-width: 996px;
+        // max-width: 996px;
     }
 
-    .order {
-        flex-direction: column;
-    }
+    // .order {
+    //     flex-direction: column;
+    // }
     
     // .title-best-sellers,
     // .title-category {
@@ -356,11 +367,11 @@ transform: scale(1.05);
     }
 }
 
-@media screen and (min-width: 768px) {
-    .order {
-        display: flex;
-    }
-}
+// @media screen and (min-width: 768px) {
+//     .order {
+//         display: flex;
+//     }
+// }
 
 // ==========================================================
 
