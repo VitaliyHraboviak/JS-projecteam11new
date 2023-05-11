@@ -18,7 +18,7 @@ export async function renderCategory() {
   }
 }
 
-(async () => {
+export async function makeBestSellersOneTime () {
   const categories = await renderCategory();
   const screenWidth = window.screen.width;
   let numOfBooks;
@@ -75,14 +75,17 @@ export async function renderCategory() {
   if (galleryBook) {
     galleryBook.innerHTML = '';
     galleryBook.insertAdjacentHTML('beforeend', bookList);
+    const titleBestsellerToRemove = document.querySelector('.title-best-sellers')
+    if (!titleBestsellerToRemove) {
     galleryBook.insertAdjacentHTML(
       'beforebegin',
       `
       <h2 class="title-best-sellers">Best sellers <span class ="title-best-sellers-color">books</span></h2>
-      `
-    );
+      `)} else {
+        titleBestsellerToRemove.innerHTML = '<h2 class="title-best-sellers">Best sellers <span class ="title-best-sellers-color">books</span></h2>'
+      }
   }
-})();
+} makeBestSellersOneTime();
 
 // ================ SEE MORE BTN ==================
 if (galleryBook) {
@@ -174,7 +177,3 @@ addEventListener('resize', () => {
     location.reload();
   }
 });
-
-// function scrollToBegin () {
-//   galleryBook.previousElementSibling.scrollIntoView({ behavior: 'smooth' });
-// }
