@@ -34,18 +34,7 @@ export async function makeCategoriesListArray() {
       console.log(resData);
       resData.map(createCategoriesPull);
 
-      const listCategory = document.querySelectorAll('.categories-item');
-    listCategory.forEach(itemCategory => {
-      itemCategory.addEventListener('click', event => {
-        const ActiveCategory = document.querySelector(
-          '.categories-item.active'
-        );
-        if (ActiveCategory) {
-          ActiveCategory.classList.remove('active');
-        }
-        event.target.classList.add('active');
-      });
-    });
+    
   
 
 

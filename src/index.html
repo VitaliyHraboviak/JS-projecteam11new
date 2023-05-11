@@ -8,25 +8,27 @@
     <link rel="stylesheet" href="./sass/index.scss" />
     <script type="module" src="./index.js"></script>
   </head>
-  <body class="light-mode" >
+  <body class="light-mode">
+    <header>
+      <include src="./partials/header.html"></include>
+    </header>
     <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/header.html"></include>
+    <!-- <include src="./partials/header.html"></include> -->
     <include src="./partials/modal_window_book.html"></include>
 
-     <main>
+    <div class="main">
+      <div>
+        <div class="order">
+          <include src="./partials/category.html"></include>
+          <include src="./partials/support_Ukraine.html"></include>
+        </div>
+      </div>
+
       <include src="./partials/best_sellers.html"></include>
-      <include src="./partials/category.html"></include>
-      <include src="./partials/support_Ukraine.html"></include>
-    </main>
-
-  
-
+    </div>
     <include src="./partials/authorization_modal_window.html"></include>
-  
-    
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="./js/header.js" type="module"></script>
+    <script src="./js/header.js" type="module"></script>
   </body>
 </html>
-
-    
