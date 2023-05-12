@@ -1,5 +1,5 @@
 import amazon from '../images/icon/amazon.png'
-import appleBooks from '../images/icon/book.png'
+import appleBooks from '../images/icon/Book.png'
 import bookShop from '../images/icon/BookShop.png'
 import axios from 'axios';
 
