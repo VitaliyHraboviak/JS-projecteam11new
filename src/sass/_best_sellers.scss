@@ -232,13 +232,13 @@ textarea {
 }
 
 
-@media screen and (min-width: 1439px) {
+// @media screen and (min-width: 1439px) {
 
-    .book-container {
-        margin-top: 100px;
+//     .book-container {
+//         margin-top: 100px;
 
-    }
-}
+//     }
+// }
 
 
 // ================== DESKTOP ================================
@@ -258,7 +258,7 @@ textarea {
     }
 
     .book-container {
-        
+        padding-top: 104px;
         padding-left: 24px;
         padding-right: 24px;
     }
@@ -267,11 +267,11 @@ textarea {
     //     flex-direction: column;
     // }
 
-    .title-best-sellers,
-    .title-category {
+    // .title-best-sellers,
+    // .title-category {
 
-        margin-top: 40px;
-    }
+    //     margin-top: 40px;
+    // }
 
     .img-card-book {
         width: 180px;
@@ -300,6 +300,8 @@ textarea {
 
         font-size: 18px;
     }
+
+
 
     // .bestsellers-section {
     //     width: 1440px;
