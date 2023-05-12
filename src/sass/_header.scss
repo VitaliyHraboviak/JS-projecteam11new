@@ -39,7 +39,7 @@
   .container-header {
       box-sizing: border-box;
       position: absolute;
-      width: 375px;
+      width: 100%;
       height: 64px;
       border: 1.5px solid var(--border);
       border-radius: 0px 0px 8px 8px;
@@ -143,6 +143,8 @@ top: 19px;
   border: none;
   background: transparent;
   color: var(--border);
+right: 25px;
+
     }
       
     .header-button-span-text {
@@ -164,14 +166,13 @@ top: 19px;
     .switch {
       position: absolute;
       width: 40px;
-      height: 24px;
-      left: 259px;
-    margin-top: 9px;
+      top: 20px;
+      right: 75px;
       
         }
       
       input[type="checkbox"] {
-      position: relative;
+      position: absolute;
       width: 40px;
       height: 20px;
       -webkit-appearance: none;
@@ -217,7 +218,7 @@ top: 19px;
     .container-header {
       box-sizing: border-box;
       position: absolute;
-      width: 375px;
+      width: 100%;
       height: 64px;
   
       border: 1.5px solid var(--border);
@@ -271,7 +272,7 @@ top: 19px;
   position: absolute;
     width: 28px;
     height: 28px;
-    left: 312px;
+    right: 25px;
     
       }
   
@@ -289,7 +290,7 @@ top: 19px;
       .container-header {
         box-sizing: border-box;
         position: absolute;
-        width: 375px;
+        width: 100%;
         height: 64px;
         border: 1.5px solid var(--border);
         border-radius: 0px 0px 8px 8px;
@@ -338,7 +339,7 @@ top: 19px;
     .container-header {
     box-sizing: border-box;
     position: absolute;
-    width: 768px;
+    width: 100%;
     height: 72px;
     display: flex;
     border: 1.5px ;
@@ -438,7 +439,7 @@ top: 19px;
     position: absolute;
     width: 184px;
     height: 45px;
-    left: 552px;
+    margin-right: 24px;
     top: 14px;
     box-sizing: border-box;
     background: #4F2EE8;
@@ -460,7 +461,7 @@ top: 19px;
       .container-header {
         box-sizing: border-box;
         position: absolute;
-        width: 768px;
+        width: 100%;
         height: 72px;
         align-items: center;
         border: 1.5px solid var(--border);
@@ -473,7 +474,7 @@ top: 19px;
     position: absolute;
     width: 184px;
     height: 45px;
-    left: 552px;
+    margin-right: 24px;
     top: 14px;
   
     box-sizing: border-box;
@@ -487,9 +488,8 @@ top: 19px;
   position: absolute;
   width: 40px;
   height: 24px;
-  left: 488px;
-  top: 20px;
-  
+  top: 24px;
+  right: 230px;
       
         }
   
@@ -503,7 +503,7 @@ top: 19px;
     
       .container-header {
         box-sizing: border-box;
-        width: 1440px;
+        width: 100%;
         height: 72px;
         align-items: center;
         border: 1.5px solid var(--border);
@@ -519,7 +519,7 @@ top: 19px;
     position: absolute;
     width: 184px;
     height: 48px;
-    left: 1232px;
+    margin-right: 24px;
     top: 12px;
     box-sizing: border-box;
     background: #4F2EE8;
@@ -532,13 +532,13 @@ top: 19px;
   position: absolute;
   width: 40px;
   height: 24px;
-  left: 1168px;
   top: 24px;
+    right: 230px;
   
     }
   
   input[type="checkbox"] {
-  position: relative;
+  position: absolute;
   width: 40px;
   height: 20px;
   -webkit-appearance: none;
