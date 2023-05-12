@@ -9,3 +9,4 @@ import './js/change_theme';
 import './js/modal_window_object';
 // import './js/shopping_list';
 import  './js/support_Ukraine'
+import  './js/best_sellers_preload';

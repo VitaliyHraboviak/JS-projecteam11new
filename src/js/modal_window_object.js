@@ -1,13 +1,13 @@
-import amazon from '../images/icon/amazon.png'
-import appleBooks from '../images/icon/Book.png'
-import bookShop from '../images/icon/BookShop.png'
 import axios from 'axios';
+
+import amazon from '../images/icon/amazon.png';
+import appleBooks from '../images/icon/Book.png';
+import bookShop from '../images/icon/BookShop.png';
 
 const bookGallery = document.querySelector('.book-gallery');
 const modal = document.querySelector('.modal');
 const modalContent = modal.querySelector('.modal-content');
 const closeButton = modal.querySelector('.js-modal-close');
-
 
 if (bookGallery) {
   bookGallery.addEventListener('click', openModal);
@@ -24,11 +24,11 @@ function openModal(event) {
   }
 }
 function getBookData(bookId) {
-  console.log(bookId) 
-    fetchingByBook(bookId).then(book => {
-      console.log(book)
-       
-     const markup = `<div class="img-book" style="background-image: url('${book.book_image}');   background-size: cover;">
+  console.log(bookId);
+  fetchingByBook(bookId).then(book => {
+    console.log(book);
+
+    const markup = `<div class="img-book" style="background-image: url('${book.book_image}');   background-size: cover;">
                     </div>
                     <div class="description-info">
                         <h2 class="title-name">${book.title}</h2>
@@ -62,13 +62,9 @@ function getBookData(bookId) {
                         </ul>
                     </div>
                     <button type="submit" class="js-add-to-shopping-list" data-id="${book._id}">Add to Shopping List</button>
-                     `; 
-                    modalContent.innerHTML = markup;
-
-
-
-  
-})
+                     `;
+    modalContent.innerHTML = markup;
+  });
 }
 function showModal(bookId) {
   //   console.log(Open modal for book with ID: ${bookId});
@@ -76,8 +72,6 @@ function showModal(bookId) {
 }
 function showModal(bookData) {
   modal.style.display = 'block';
-  
-   
 
   const closeButtons = modalContent.querySelectorAll('.js-modal-close');
   closeButtons.forEach(button => {
@@ -164,21 +158,16 @@ document.addEventListener('keydown', event => {
   }
 });
 
-
 ///////////////////////////////////////////////////////////////////
- 
- 
- 
 
 export async function fetchingByBook(id) {
   try {
-     const response = await axios.get(
+    const response = await axios.get(
       `https://books-backend.p.goit.global/books/${id}`
     );
-    console.log(response.data)
-     return response.data;
+    console.log(response.data);
+    return response.data;
   } catch (error) {
     console.log('catch error', error);
   }
 }
- 

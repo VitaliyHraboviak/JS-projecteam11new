@@ -57,13 +57,13 @@
   
     color: var(--active-category-color);
   }
-  
-  @media screen and (min-width: 768px) {
+   @media screen and (min-width: 768px) {
     .categories-list {
       width: 337px;
       height: 472px;
+      margin-left: 0;
+      margin-right: 0;
     }
-  
     .categories-list::-webkit-scrollbar {
       height: 167px;
     }
@@ -83,6 +83,11 @@
       margin-bottom: 32px;
     }
   }
+  aside {
+ 
+     flex-direction: initial;
+ 
+}
   
   @media screen and (min-width: 1440px) {
     .categories-section {
