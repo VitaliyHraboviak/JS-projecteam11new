@@ -82,12 +82,14 @@
     .category-item:not(:last-child) {
       margin-bottom: 32px;
     }
-  
-  aside {
+     aside {
  
      flex-direction: initial;
- }
-}  
+ 
+}
+  }
+ 
+  
   @media screen and (min-width: 1440px) {
     .categories-section {
       padding-bottom: 86px;
