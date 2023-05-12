@@ -10,28 +10,38 @@ const allCategoriesItem = document.querySelector('.categories-item')
 const galleryBook = document.querySelector('.book-gallery');
 
  categoriesBlock.addEventListener('click', chooseCategory);
+//  categoriesBlock.addEventListener('click', makeActive);
 
  
-allCategoriesItem.addEventListener('click',makeActive )
-function makeActive() {
-allCategoriesItems.forEach(itemCategory => {
-  itemCategory.addEventListener('click', event => {
-    const activeCategory = document.querySelector(
-      '.active'
-    );
-    if (activeCategory) {
-      activeCategory.classList.remove('active');
-      console.log('remove')
-    }
-    event.target.classList.add('active');
-    console.log('add')
+// allCategoriesItem.addEventListener('click',makeActive )
+// function makeActive() {
+// allCategoriesItems.forEach(itemCategory => {
+//   itemCategory.addEventListener('click', event => {
+    // const activeCategory = document.querySelector(
+    //   '.active'
+    // );
+    // if (activeCategory) {
+    //   activeCategory.classList.remove('active');
+    //   console.log('remove')
+    // }
+    // event.target.classList.add('active');
+    // console.log('add')
 
-  });
-});
-}
+//   });
+// });
+// }
 
 function chooseCategory(event) {
- makeActive() 
+//  makeActive() 
+const activeCategory = document.querySelector(
+  '.active'
+);
+if (activeCategory) {
+  activeCategory.classList.remove('active');
+  console.log('remove')
+}
+event.target.classList.add('active');
+console.log('add')
 
   event.preventDefault();
   // console.dir(event);
@@ -51,7 +61,7 @@ function chooseCategory(event) {
     if (topBooks.innerHTML) {
       topBooks.innerHTML = '';
     }
-    return;
+    ;
   } else if (event.target.nodeName !== 'LI') {
     return;
   } else {
