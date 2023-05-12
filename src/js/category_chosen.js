@@ -1,12 +1,14 @@
 import {renderCategory} from './best_sellers_render'
 import {FetchBooks} from './best_sellers_fetch';
-// import { makeBestesselersOneMoreTime } from './best_sellers_render';
+import { makeBestesselersOneMoreTime } from './best_sellers_render';
 const categoriesBlock = document.querySelector('.categories-list');
  
 const topBooks = document.querySelector('.book-gallery');
 const allCategories = document.querySelector('.all-categories')
 const allCategoriesItems = document.querySelectorAll('.categories-item')
 const allCategoriesItem = document.querySelector('.categories-item')
+const galleryBook = document.querySelector('.book-gallery');
+
  categoriesBlock.addEventListener('click', chooseCategory);
 
  
@@ -32,7 +34,7 @@ function chooseCategory(event) {
  makeActive() 
 
   event.preventDefault();
-  console.dir(event);
+  // console.dir(event);
   // console.dir(event.target.value);
   // console.dir(event.target.classList);
 
@@ -45,7 +47,7 @@ function chooseCategory(event) {
   
 
   if (event.target.classList.contains("all-categories")) {
-    makeBestSellersOneTime ();///// waiting for import from bestsellersrender
+    makeBestSellersOneTime();///// waiting for import from bestsellersrender
     if (topBooks.innerHTML) {
       topBooks.innerHTML = '';
     }
@@ -125,4 +127,71 @@ function chooseCategory(event) {
   }
 }
 
- 
+async function makeBestSellersOneTime () {
+  const categories = await renderCategory();
+  const screenWidth = window.screen.width;
+  let numOfBooks;
+
+  if (screenWidth < 768) {
+    numOfBooks = 1;
+  } else if (screenWidth < 1280) {
+    numOfBooks = 3;
+  } else {
+    numOfBooks = 5;
+  }
+
+  let bookList = '';
+  for (let i = 0; i < categories.length; i += 1) {
+    const { list_name, books } = categories[i];
+    const booksOnDisplay = books.slice(0, numOfBooks);
+
+    const bookItems = booksOnDisplay
+      .map(
+        book => `
+          <li class="item-category-book" data-book-id="${book._id}">
+            <a class="link-books-render" href="#" onclick="event.preventDefault()">
+              
+                <div class="img-card-book">
+                  <img src="${book.book_image}" alt="book" class="img-book">
+                  
+                </div>
+                <div class="book-info">
+                  
+                    <p class="title-book">${book.title}</p>
+                  
+                  
+                    <p class="author-book">${book.author}</p>
+                 
+                </div>
+              
+            </a>
+          </li>
+        `
+      )
+      .join('');
+
+    bookList += `
+      <li>
+        <h3 class="item-category">${list_name}</h3>
+        <ul class="box-category">
+          ${bookItems}
+        </ul>
+        <button type="button" aria-label="Show more" class="see-more">See more</button>
+      </li>
+    `;
+  }
+
+  if (galleryBook) {
+    galleryBook.innerHTML = '';
+    galleryBook.insertAdjacentHTML('beforeend', bookList);
+    const titleBestsellerToRemove = document.querySelector('.title-best-sellers')
+    if (!titleBestsellerToRemove) {
+    galleryBook.insertAdjacentHTML(
+      'beforebegin',
+      `
+      <h2 class="title-best-sellers">Best sellers <span class ="title-best-sellers-color">books</span></h2>
+      `)} else {
+        titleBestsellerToRemove.innerHTML = '<h2 class="title-best-sellers">Best sellers <span class ="title-best-sellers-color">books</span></h2>'
+      }
+  }
+}
