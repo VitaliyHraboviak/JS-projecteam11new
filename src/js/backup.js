@@ -1,13 +1,8 @@
-import amazon from '../images/icon/amazon.png'
-import appleBooks from '../images/icon/book.png'
-import bookShop from '../images/icon/BookShop.png'
-import axios from 'axios';
-
+ 
 const bookGallery = document.querySelector('.book-gallery');
 const modal = document.querySelector('.modal');
 const modalContent = modal.querySelector('.modal-content');
 const closeButton = modal.querySelector('.js-modal-close');
-
 
 if (bookGallery) {
   bookGallery.addEventListener('click', openModal);
@@ -24,60 +19,49 @@ function openModal(event) {
   }
 }
 function getBookData(bookId) {
-  console.log(bookId) 
-    fetchingByBook(bookId).then(book => {
-      console.log(book)
-       
-     const markup = `<div class="img-book" style="background-image: url('${book.book_image}');   background-size: cover;">
-                    </div>
-                    <div class="description-info">
-                        <h2 class="title-name">${book.title}</h2>
-                        <h3 class="author-book">${book.author}</h3>
-                        <p class="description-book">${book.description}</p>
-                        <ul class="shop-book">
-                        <li class="name-books-shops">
-                         <a href="${book.buy_links[0].url}"  " class="amazon-img">
-                            <img
-                            src="${amazon}"
-                            alt="logo Amazon"
-                            />
-                          </a>
-                        </li>
-                        <li class="name-books-shops">
-                          <a href="${book.buy_links[1].url}"  >
-                            <img
-                            src="${appleBooks}"
-                            alt="logo shop" 
-                            />
-                          </a>
-                        </li>
-                        <li class="name-books-shops">
-                          <a href="${book.buy_links[4].url}">
-                            <img
-                            src="${bookShop}"
-                            alt="logo shop" 
-                            />
-                          </a>
-                        </li>
-                        </ul>
-                    </div>
-                    <button type="submit" class="js-add-to-shopping-list" data-id="${book._id}">Add to Shopping List</button>
-                     `; 
-                    modalContent.innerHTML = markup;
-
-
-
-  
-})
+  return {
+    id: bookId,
+    coverImage: 'book-cover.jpg',
+    name: 'Book Name',
+    author: 'Author Name',
+    description: 'Book description goes here.',
+    tradingPlatforms: [
+      { name: 'Amazon', link: 'https://amazon.com' },
+      { name: 'Platform 2', link: 'https://rozetka.com' },
+      { name: 'Platform 3', link: 'https://platform3.com' },
+    ],
+  };
 }
-function showModal(bookId) {
-  //   console.log(Open modal for book with ID: ${bookId});
-  modal.style.display = 'block';
-}
+// function showModal(bookId) {
+//   //   console.log(Open modal for book with ID: ${bookId});
+//   modal.style.display = 'block';
+// }
 function showModal(bookData) {
   modal.style.display = 'block';
-  
-   
+  modalContent.innerHTML = `
+    <div class="modal-header">
+     <img class="book-cover" src="${bookData.coverImage}" alt="Book Cover">
+      <button class="js-modal-close">Close</button>
+    </div>
+    <div class="modal-body">
+      <h2>${bookData.name}</h2>
+      
+      <p class="author-book"><strong>Author:</strong> ${bookData.author}</p>
+      <p class="description-book"><strong>Description:</strong> ${
+        bookData.description
+      }</p>
+      <h4>Trading Platforms:</h4>
+      <ul>
+        ${bookData.tradingPlatforms
+          .map(
+            platform =>
+              `<li><a href="${platform.link}" target="_blank">${platform.name}</a></li>`
+          )
+          .join('')}
+      </ul>
+      <button class="js-add-to-shopping-list">Add to Shopping List</button>
+    </div>
+  `;
 
   const closeButtons = modalContent.querySelectorAll('.js-modal-close');
   closeButtons.forEach(button => {
@@ -163,22 +147,3 @@ document.addEventListener('keydown', event => {
     hideModal();
   }
 });
-
-
-///////////////////////////////////////////////////////////////////
- 
- 
- 
-
-export async function fetchingByBook(id) {
-  try {
-     const response = await axios.get(
-      `https://books-backend.p.goit.global/books/${id}`
-    );
-    console.log(response.data)
-     return response.data;
-  } catch (error) {
-    console.log('catch error', error);
-  }
-}
- 
