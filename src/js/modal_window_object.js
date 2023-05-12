@@ -8,13 +8,13 @@ if (bookGallery) {
 }
 
 function openModal(event) {
-   if (event.target.closest('.item-category-book')) {
-  //   const bookId = event.target.closest('.item-category-book').dataset.bookId;
-  //   showModal(bookId);
-     const bookElement = event.target.closest('.item-category-book');
-     const bookId = bookElement.dataset.bookId;
-     const bookData = getBookData(bookId);
-     showModal(bookData);
+  if (event.target.closest('.item-category-book')) {
+    //   const bookId = event.target.closest('.item-category-book').dataset.bookId;
+    //   showModal(bookId);
+    const bookElement = event.target.closest('.item-category-book');
+    const bookId = bookElement.dataset.bookId;
+    const bookData = getBookData(bookId);
+    showModal(bookData);
   }
 }
 function getBookData(bookId) {
@@ -39,13 +39,16 @@ function showModal(bookData) {
   modal.style.display = 'block';
   modalContent.innerHTML = `
     <div class="modal-header">
-      <h2>${bookData.name}</h2>
+     <img class="book-cover" src="${bookData.coverImage}" alt="Book Cover">
       <button class="js-modal-close">Close</button>
     </div>
     <div class="modal-body">
-      <img class="book-cover" src="${bookData.coverImage}" alt="Book Cover">
-      <p><strong>Author:</strong> ${bookData.author}</p>
-      <p><strong>Description:</strong> ${bookData.description}</p>
+      <h2>${bookData.name}</h2>
+      
+      <p class="author-book"><strong>Author:</strong> ${bookData.author}</p>
+      <p class="description-book"><strong>Description:</strong> ${
+        bookData.description
+      }</p>
       <h4>Trading Platforms:</h4>
       <ul>
         ${bookData.tradingPlatforms
@@ -70,10 +73,9 @@ function showModal(bookData) {
   addToShoppingListButton.addEventListener('click', toggleShoppingList);
 }
 const platformLogos = modalContent.querySelectorAll('.platform-logo');
-  platformLogos.forEach((logo) => {
-    logo.addEventListener('click', openTradingPlatform);
-  });
-
+platformLogos.forEach(logo => {
+  logo.addEventListener('click', openTradingPlatform);
+});
 
 function openTradingPlatform(event) {
   event.preventDefault();
@@ -81,13 +83,13 @@ function openTradingPlatform(event) {
   window.open(tradingPlatformURL, '_blank');
 }
 
-
 function hideModal() {
   modal.style.display = 'none';
 }
 
 function toggleShoppingList() {
- const bookId = modalContent.querySelector('.js-add-to-shopping-list').dataset.bookId;
+  const bookId = modalContent.querySelector('.js-add-to-shopping-list').dataset
+    .bookId;
   const shoppingList = getShoppingList();
 
   if (isBookInShoppingList(bookId, shoppingList)) {
@@ -105,7 +107,7 @@ function getShoppingList() {
 }
 
 function isBookInShoppingList(bookId, shoppingList) {
-  return shoppingList.some((book) => book.id === bookId);
+  return shoppingList.some(book => book.id === bookId);
 }
 
 function addToShoppingList(bookId, shoppingList) {
@@ -114,7 +116,7 @@ function addToShoppingList(bookId, shoppingList) {
 }
 
 function removeFromShoppingList(bookId, shoppingList) {
-  const bookIndex = shoppingList.findIndex((book) => book.id === bookId);
+  const bookIndex = shoppingList.findIndex(book => book.id === bookId);
   if (bookIndex !== -1) {
     shoppingList.splice(bookIndex, 1);
   }
@@ -124,7 +126,7 @@ function saveShoppingList(shoppingList) {
   localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
 }
 
- // bookGallery.addEventListener('click', event => {
+// bookGallery.addEventListener('click', event => {
 //   const clickedBook = event.target.closest('.book-card');
 //   if (clickedBook) {
 //     showModal(clickedBook);
