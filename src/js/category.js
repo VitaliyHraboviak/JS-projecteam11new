@@ -49,3 +49,25 @@ export async function makeCategoriesListArray() {
       return categoriesArray;
     });
 }
+//  ///////
+const categoriesBlock = document.querySelector('.categories-item');
+const allCategoriesItems = document.querySelectorAll('.categories-item')
+console.log(allCategoriesItems)
+
+categoriesBlock.addEventListener('click', makeActive);
+function makeActive() {
+  allCategoriesItems.forEach(itemCategory => {
+    itemCategory.addEventListener('click', event => {
+      const activeCategory = document.querySelector(
+        '.active'
+      );
+      if (activeCategory) {
+        activeCategory.classList.remove('active');
+        console.log('remove')
+      }
+      event.target.classList.add('active');
+      console.log('add')
+  
+    });
+  });
+  }

@@ -5,10 +5,12 @@
 
   
   .categories-list {
-    display: block;
     height: 228px;
-    overflow: auto;
     width: 335px;
+    display: block;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   /* scrollbar */
@@ -125,6 +127,10 @@ aside {
         }
     }
 
+    .name-books-shops img {
+width: 20px;
+height: 20px;
+    }
 
 
     // ==========================================
